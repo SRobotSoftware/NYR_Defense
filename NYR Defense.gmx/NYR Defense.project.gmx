@@ -8,6 +8,42 @@
   <sprites name="sprites"/>
   <backgrounds name="background"/>
   <paths name="paths"/>
+  <objects name="objects">
+    <objects name="Enemies">
+      <object>objects\par_enemy</object>
+      <object>objects\obj_Chunk</object>
+      <object>objects\obj_Blippy</object>
+      <object>objects\obj_Lefty</object>
+      <object>objects\obj_Zipper</object>
+      <object>objects\obj_boss_Blippythequick</object>
+      <object>objects\obj_boss_Righty</object>
+    </objects>
+    <objects name="Projectiles">
+      <object>objects\par_projectile</object>
+      <object>objects\obj_player_laser</object>
+      <object>objects\obj_player_missile</object>
+      <object>objects\obj_enemy_laser</object>
+    </objects>
+    <objects name="Powerups">
+      <object>objects\obj_laserup</object>
+      <object>objects\obj_laserqup</object>
+      <object>objects\obj_missileup</object>
+      <object>objects\obj_shieldup</object>
+    </objects>
+    <objects name="Player">
+      <object>objects\obj_Praetoriani</object>
+      <object>objects\obj_shield</object>
+    </objects>
+  </objects>
+  <rooms name="rooms">
+    <room>rooms\rm_startscreen</room>
+    <room>rooms\rm_NYR</room>
+    <room>rooms\rm_NYR_boss</room>
+    <room>rooms\rm_Moon</room>
+    <room>rooms\rm_Moon_boss</room>
+    <room>rooms\rm_endscreen</room>
+    <room>rooms\rm_highscore</room>
+  </rooms>
   <help>
     <rtf>help.rtf</rtf>
   </help>
