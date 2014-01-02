@@ -5,7 +5,27 @@
   </Configs>
   <NewExtensions/>
   <sounds name="sound"/>
-  <sprites name="sprites"/>
+  <sprites name="sprites">
+    <sprites name="Enemies">
+      <sprite>sprites\spr_chunk</sprite>
+      <sprite>sprites\spr_blippy</sprite>
+    </sprites>
+    <sprites name="Projectiles">
+      <sprite>sprites\spr_player_laser</sprite>
+      <sprite>sprites\spr_enemy_laser</sprite>
+      <sprite>sprites\spr_player_missile</sprite>
+    </sprites>
+    <sprites name="Powerups">
+      <sprite>sprites\spr_laserup</sprite>
+      <sprite>sprites\spr_laserqup</sprite>
+      <sprite>sprites\spr_missileup</sprite>
+      <sprite>sprites\spr_shieldup</sprite>
+    </sprites>
+    <sprites name="Player">
+      <sprite>sprites\spr_praetoriani</sprite>
+      <sprite>sprites\spr_shield</sprite>
+    </sprites>
+  </sprites>
   <backgrounds name="background"/>
   <paths name="paths"/>
   <objects name="objects">
@@ -33,6 +53,14 @@
     <objects name="Player">
       <object>objects\obj_Praetoriani</object>
       <object>objects\obj_shield</object>
+    </objects>
+    <objects name="Logic">
+      <object>objects\log_startscreen</object>
+      <object>objects\log_HUD</object>
+      <object>objects\log_ewave_NYR</object>
+      <object>objects\log_ewave_Moon</object>
+      <object>objects\log_endscreen</object>
+      <object>objects\log_highscore</object>
     </objects>
   </objects>
   <rooms name="rooms">
