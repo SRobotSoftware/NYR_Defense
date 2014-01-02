@@ -20,14 +20,20 @@
       <sprite>sprites\spr_laserqup</sprite>
       <sprite>sprites\spr_missileup</sprite>
       <sprite>sprites\spr_shieldup</sprite>
+      <sprite>sprites\spr_healthup</sprite>
     </sprites>
     <sprites name="Player">
       <sprite>sprites\spr_praetoriani</sprite>
       <sprite>sprites\spr_shield</sprite>
+      <sprite>sprites\spr_health_bg</sprite>
+      <sprite>sprites\spr_health</sprite>
     </sprites>
   </sprites>
   <backgrounds name="background"/>
   <paths name="paths"/>
+  <fonts name="fonts">
+    <font>fonts\fnt_default</font>
+  </fonts>
   <objects name="objects">
     <objects name="Enemies">
       <object>objects\par_enemy</object>
@@ -49,6 +55,7 @@
       <object>objects\obj_laserqup</object>
       <object>objects\obj_missileup</object>
       <object>objects\obj_shieldup</object>
+      <object>objects\obj_healthup</object>
     </objects>
     <objects name="Player">
       <object>objects\obj_Praetoriani</object>

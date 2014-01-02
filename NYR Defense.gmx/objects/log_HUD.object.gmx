@@ -4,10 +4,138 @@
   <solid>0</solid>
   <visible>-1</visible>
   <depth>0</depth>
-  <persistent>0</persistent>
+  <persistent>-1</persistent>
   <parentName>&lt;undefined&gt;</parentName>
   <maskName>&lt;undefined&gt;</maskName>
-  <events/>
+  <events>
+    <event eventtype="0" enumb="0">
+      <action>
+        <libid>1</libid>
+        <id>603</id>
+        <kind>7</kind>
+        <userelative>0</userelative>
+        <isquestion>0</isquestion>
+        <useapplyto>-1</useapplyto>
+        <exetype>2</exetype>
+        <functionname></functionname>
+        <codestring></codestring>
+        <whoName>self</whoName>
+        <relative>0</relative>
+        <isnot>0</isnot>
+        <arguments>
+          <argument>
+            <kind>1</kind>
+            <string>/// Initialize game variables
+
+score = 0;
+health = 3;
+lives = 3;
+
+globalvar ammo_count;
+globalvar equipment;
+globalvar wave;
+globalvar level;
+globalvar larm;
+globalvar dmult;
+
+ammo_count = 3;
+equipment = "missile";
+wave = 0;
+level = 0;
+larm = 0;
+dmult = 1;
+</string>
+          </argument>
+        </arguments>
+      </action>
+    </event>
+    <event eventtype="5" enumb="27">
+      <action>
+        <libid>1</libid>
+        <id>603</id>
+        <kind>7</kind>
+        <userelative>0</userelative>
+        <isquestion>0</isquestion>
+        <useapplyto>-1</useapplyto>
+        <exetype>2</exetype>
+        <functionname></functionname>
+        <codestring></codestring>
+        <whoName>self</whoName>
+        <relative>0</relative>
+        <isnot>0</isnot>
+        <arguments>
+          <argument>
+            <kind>1</kind>
+            <string>///Go to start
+room_goto(rm_startscreen);
+instance_destroy();
+</string>
+          </argument>
+        </arguments>
+      </action>
+    </event>
+    <event eventtype="8" enumb="0">
+      <action>
+        <libid>1</libid>
+        <id>603</id>
+        <kind>7</kind>
+        <userelative>0</userelative>
+        <isquestion>0</isquestion>
+        <useapplyto>-1</useapplyto>
+        <exetype>2</exetype>
+        <functionname></functionname>
+        <codestring></codestring>
+        <whoName>self</whoName>
+        <relative>0</relative>
+        <isnot>0</isnot>
+        <arguments>
+          <argument>
+            <kind>1</kind>
+            <string>///Draw HUD
+draw_set_font(fnt_default);
+draw_set_color(c_white);
+draw_set_halign(fa_left);
+draw_text(0,0,"Wave: " + string(wave));
+draw_text(0,16,"Score: " + string(score));
+draw_set_halign(fa_right);
+draw_text(room_width,0,"Ammo: " + string(ammo_count));
+draw_text(room_width,16,"Lives: " + string(lives));
+
+//Draw Healthbar
+healthx = room_width/2;
+healthy = room_height-12;
+draw_sprite(spr_health_bg,0,healthx,healthy);
+if (health &gt;= 1) {
+    draw_sprite(spr_health,-1,healthx-16,healthy);
+    }
+if (health &gt;= 2) {
+    draw_sprite(spr_health,-1,healthx,healthy);
+    }
+if (health &gt;=3) {
+    draw_sprite(spr_health,-1,healthx+16,healthy);
+    }
+</string>
+          </argument>
+        </arguments>
+      </action>
+    </event>
+    <event eventtype="9" enumb="82">
+      <action>
+        <libid>1</libid>
+        <id>223</id>
+        <kind>0</kind>
+        <userelative>0</userelative>
+        <isquestion>0</isquestion>
+        <useapplyto>0</useapplyto>
+        <exetype>1</exetype>
+        <functionname>action_current_room</functionname>
+        <codestring></codestring>
+        <whoName>self</whoName>
+        <relative>0</relative>
+        <isnot>0</isnot>
+      </action>
+    </event>
+  </events>
   <PhysicsObject>0</PhysicsObject>
   <PhysicsObjectSensor>0</PhysicsObjectSensor>
   <PhysicsObjectShape>0</PhysicsObjectShape>

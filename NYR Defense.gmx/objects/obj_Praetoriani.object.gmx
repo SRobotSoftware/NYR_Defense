@@ -7,7 +7,240 @@
   <persistent>0</persistent>
   <parentName>&lt;undefined&gt;</parentName>
   <maskName>&lt;undefined&gt;</maskName>
-  <events/>
+  <events>
+    <event eventtype="0" enumb="0">
+      <action>
+        <libid>1</libid>
+        <id>603</id>
+        <kind>7</kind>
+        <userelative>0</userelative>
+        <isquestion>0</isquestion>
+        <useapplyto>-1</useapplyto>
+        <exetype>2</exetype>
+        <functionname></functionname>
+        <codestring></codestring>
+        <whoName>self</whoName>
+        <relative>0</relative>
+        <isnot>0</isnot>
+        <arguments>
+          <argument>
+            <kind>1</kind>
+            <string>///Set Friction
+friction = .5;
+</string>
+          </argument>
+        </arguments>
+      </action>
+    </event>
+    <event eventtype="2" enumb="1">
+      <action>
+        <libid>1</libid>
+        <id>603</id>
+        <kind>7</kind>
+        <userelative>0</userelative>
+        <isquestion>0</isquestion>
+        <useapplyto>-1</useapplyto>
+        <exetype>2</exetype>
+        <functionname></functionname>
+        <codestring></codestring>
+        <whoName>self</whoName>
+        <relative>0</relative>
+        <isnot>0</isnot>
+        <arguments>
+          <argument>
+            <kind>1</kind>
+            <string>///Activate Equipment
+if (ammo_count &gt;= 1) {
+    if (equipment == "missile") {
+       var missile;
+       missile = instance_create(x,y-4,obj_player_missile);
+       missile.direction = 90;
+       ammo_count -= 1;
+    }
+
+    if (equipment == "shield") &amp;&amp; !instance_exists(obj_shield) {
+       instance_create(x,y,obj_shield);
+       ammo_count -= 1;
+    }
+}
+</string>
+          </argument>
+        </arguments>
+      </action>
+    </event>
+    <event eventtype="2" enumb="0">
+      <action>
+        <libid>1</libid>
+        <id>603</id>
+        <kind>7</kind>
+        <userelative>0</userelative>
+        <isquestion>0</isquestion>
+        <useapplyto>-1</useapplyto>
+        <exetype>2</exetype>
+        <functionname></functionname>
+        <codestring></codestring>
+        <whoName>self</whoName>
+        <relative>0</relative>
+        <isnot>0</isnot>
+        <arguments>
+          <argument>
+            <kind>1</kind>
+            <string>///Fire Laser
+
+switch larm {
+    case 0:
+        laser0 = instance_create(x,y-8,obj_player_laser);
+        laser0.direction = 90;
+        break;
+    case 1:
+        laser0 = instance_create(x,y-8,obj_player_laser);
+        laser1 = instance_create(x-8,y-8,obj_player_laser);
+        laser2 = instance_create(x+8,y-8,obj_player_laser);
+        laser0.direction = 90;
+        laser1.direction = 90;
+        laser2.direction = 90;
+        break;
+    case 2:
+        laser0 = instance_create(x,y-8,obj_player_laser);
+        laser1 = instance_create(x-8,y-8,obj_player_laser);
+        laser2 = instance_create(x+8,y-8,obj_player_laser);
+        laser0.direction = 90;
+        laser1.direction = 100;
+        laser2.direction = 80;
+        break;
+    case 3:
+        laser0 = instance_create(x-4,y-8,obj_player_laser);
+        laser1 = instance_create(x-12,y-8,obj_player_laser);
+        laser2 = instance_create(x+12,y-8,obj_player_laser);
+        laser3 = instance_create(x+4,y-8,obj_player_laser);
+        laser4 = instance_create(x-8,y-8,obj_player_laser);
+        laser5 = instance_create(x+8,y-8,obj_player_laser);
+        laser0.direction = 90;
+        laser1.direction = 100;
+        laser2.direction = 80;
+        laser3.direction = 90;
+        laser4.direction = 100;
+        laser5.direction = 80;
+        break;
+}
+</string>
+          </argument>
+        </arguments>
+      </action>
+    </event>
+    <event eventtype="3" enumb="1">
+      <action>
+        <libid>1</libid>
+        <id>603</id>
+        <kind>7</kind>
+        <userelative>0</userelative>
+        <isquestion>0</isquestion>
+        <useapplyto>-1</useapplyto>
+        <exetype>2</exetype>
+        <functionname></functionname>
+        <codestring></codestring>
+        <whoName>self</whoName>
+        <relative>0</relative>
+        <isnot>0</isnot>
+        <arguments>
+          <argument>
+            <kind>1</kind>
+            <string>///Calculate Health
+
+if (health &lt;= 0) {
+    instance_deactivate_object(par_projectile);
+    score = ceil(score/2);
+    x = 160;
+    y = 576;
+    lives -= 1;
+    health = 3;
+}
+
+if (lives &lt;= 0) {
+    instance_deactivate_all(0);
+    room_goto(rm_endscreen);
+}
+</string>
+          </argument>
+        </arguments>
+      </action>
+    </event>
+    <event eventtype="3" enumb="0">
+      <action>
+        <libid>1</libid>
+        <id>603</id>
+        <kind>7</kind>
+        <userelative>0</userelative>
+        <isquestion>0</isquestion>
+        <useapplyto>-1</useapplyto>
+        <exetype>2</exetype>
+        <functionname></functionname>
+        <codestring></codestring>
+        <whoName>self</whoName>
+        <relative>0</relative>
+        <isnot>0</isnot>
+        <arguments>
+          <argument>
+            <kind>1</kind>
+            <string>/// Gather and execute Player Input
+// movement controls
+if (keyboard_check(ord("A"))) hspeed -= 1;
+if (keyboard_check(ord("D"))) hspeed += 1;
+if (keyboard_check(ord("W"))) vspeed -= 1;
+if (keyboard_check(ord("S"))) vspeed += 1;
+// speed limit
+if (speed &gt; 6) speed = 6;
+// firing controls
+if (keyboard_check(vk_space)) if (alarm[0] = -1) alarm[0] = 5;
+if (keyboard_check(vk_lshift)) if (alarm[1] = -1) alarm[1] = 20;
+</string>
+          </argument>
+        </arguments>
+      </action>
+      <action>
+        <libid>1</libid>
+        <id>603</id>
+        <kind>7</kind>
+        <userelative>0</userelative>
+        <isquestion>0</isquestion>
+        <useapplyto>-1</useapplyto>
+        <exetype>2</exetype>
+        <functionname></functionname>
+        <codestring></codestring>
+        <whoName>self</whoName>
+        <relative>0</relative>
+        <isnot>0</isnot>
+        <arguments>
+          <argument>
+            <kind>1</kind>
+            <string>///Calculate Collisions
+// enemy collision
+hit = instance_place(x,y,par_enemy);
+hit1 = instance_place(x,y,obj_enemy_laser);
+if ((hit != noone) or (hit1 != noone)) {
+    health -= 1;
+    if (hit) {
+        hit.valScore = 0;
+        hit.hp = 0;
+    } else if (hit1) {
+    instance_deactivate_object(obj_enemy_laser)
+    }
+    
+}
+// room collision
+if (x &lt;= 16) x = 17 else x = min(x,room_width-17);
+if (y &lt;= 16) y = 17 else y = min(y,room_height-17);
+
+if (lives &lt;= 0) {
+    wave--;
+    room_goto(rm_endscreen);
+}
+</string>
+          </argument>
+        </arguments>
+      </action>
+    </event>
+  </events>
   <PhysicsObject>0</PhysicsObject>
   <PhysicsObjectSensor>0</PhysicsObjectSensor>
   <PhysicsObjectShape>0</PhysicsObjectShape>
@@ -19,5 +252,8 @@
   <PhysicsObjectFriction>0.200000002980232</PhysicsObjectFriction>
   <PhysicsObjectAwake>-1</PhysicsObjectAwake>
   <PhysicsObjectKinematic>0</PhysicsObjectKinematic>
-  <PhysicsShapePoints/>
+  <PhysicsShapePoints>
+    <point>16,16</point>
+    <point>16,16</point>
+  </PhysicsShapePoints>
 </object>
