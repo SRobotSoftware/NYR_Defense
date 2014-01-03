@@ -28,6 +28,13 @@
             <string>///Initialize and set Enemy Variables
 hp = 4;
 valScore = 2;
+
+loot[0] = 0;
+loot[1] = obj_laserup;
+loot[2] = obj_laserqup;
+loot[3] = obj_missileup;
+loot[4] = obj_healthup;
+loot[5] = obj_healthup;
 </string>
           </argument>
         </arguments>

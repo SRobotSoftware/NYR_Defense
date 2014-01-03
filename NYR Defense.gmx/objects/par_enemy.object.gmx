@@ -27,6 +27,9 @@
             <kind>1</kind>
             <string>if (hp &lt;= 0) {
     score += valScore;
+    randomize();
+    lootid = irandom(array_length_1d(loot));
+    if (lootid != 0) instance_create(x,y,loot[lootid]);
     instance_destroy();
     }
 </string>
