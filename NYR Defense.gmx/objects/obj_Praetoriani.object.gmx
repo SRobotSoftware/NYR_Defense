@@ -50,6 +50,7 @@ friction = .5;
           <argument>
             <kind>1</kind>
             <string>///Activate Equipment
+
 if (ammo_count &gt;= 1) {
     if (equipment == "missile") {
        var missile;
@@ -216,14 +217,14 @@ if (keyboard_check(vk_lshift)) if (alarm[1] = -1) alarm[1] = 20;
             <string>///Calculate Collisions
 // enemy collision
 hit = instance_place(x,y,par_enemy);
-hit1 = instance_place(x,y,obj_enemy_laser);
+hit1 = instance_place(x,y,par_enemy_projectile);
 if ((hit != noone) or (hit1 != noone)) {
     health -= 1;
     if (hit) {
         hit.valScore = 0;
         hit.hp = 0;
     } else if (hit1) {
-    instance_deactivate_object(obj_enemy_laser)
+    instance_deactivate_object(hit1)
     }
     
 }

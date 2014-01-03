@@ -46,6 +46,7 @@
     </objects>
     <objects name="Projectiles">
       <object>objects\par_projectile</object>
+      <object>objects\par_enemy_projectile</object>
       <object>objects\obj_player_laser</object>
       <object>objects\obj_player_missile</object>
       <object>objects\obj_enemy_laser</object>

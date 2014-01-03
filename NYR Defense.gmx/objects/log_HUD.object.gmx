@@ -27,10 +27,6 @@
             <kind>1</kind>
             <string>/// Initialize game variables
 
-score = 0;
-health = 3;
-lives = 3;
-
 globalvar ammo_count;
 globalvar equipment;
 globalvar wave;
@@ -44,6 +40,9 @@ wave = 0;
 level = 0;
 larm = 0;
 dmult = 1;
+score = 0;
+health = 3;
+lives = 3;
 </string>
           </argument>
         </arguments>
