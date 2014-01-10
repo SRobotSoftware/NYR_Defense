@@ -49,7 +49,8 @@ image_angle = direction;
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>///Destroy instance
+            <string>///Flag and Destroy instance
+leftRoom = 1;
 instance_destroy();
 </string>
           </argument>

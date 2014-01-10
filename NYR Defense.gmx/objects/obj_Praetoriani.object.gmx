@@ -155,7 +155,7 @@ if (health &lt;= 0) {
     y = 576;
     lives -= 1;
     health = 3;
-    sound_play(snd_player_death);
+    audio_play_sound(snd_player_death,1,0);
 }
 
 if (lives &lt;= 0) {
@@ -227,7 +227,7 @@ if ((hit != noone) or (hit1 != noone)) {
     } else if (hit1) {
     instance_deactivate_object(hit1)
     }
-    sound_play(snd_player_hit);
+    audio_play_sound(snd_player_hit,1,0);
     
 }
 // room collision

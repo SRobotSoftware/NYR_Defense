@@ -9,11 +9,18 @@
       <sound>sound\snd_player_death</sound>
       <sound>sound\snd_player_laser</sound>
       <sound>sound\snd_player_hit</sound>
-      <sound>sound\player_missile_hit</sound>
+      <sound>sound\snd_player_missile_hit</sound>
     </sounds>
     <sounds name="Enemies">
       <sound>sound\snd_enemy_laser</sound>
       <sound>sound\snd_enemy_death</sound>
+    </sounds>
+    <sounds name="Powerups">
+      <sound>sound\snd_powerup_health</sound>
+      <sound>sound\snd_powerup_laserqup</sound>
+      <sound>sound\snd_powerup_laserup</sound>
+      <sound>sound\snd_powerup_missileup</sound>
+      <sound>sound\snd_powerup_shieldup</sound>
     </sounds>
   </sounds>
   <sprites name="sprites">
