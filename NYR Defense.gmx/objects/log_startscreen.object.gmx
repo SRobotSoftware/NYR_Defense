@@ -29,6 +29,7 @@
 draw_set_halign(fa_center);
 draw_set_color(c_white);
 draw_text(160,128,"NYR Defense");
+draw_text(160,256,"Movement = WASD#Fire = Space#Use Equipment = L-Shift");
 draw_text(160,480,"Press Space#to begin");
 </string>
           </argument>

@@ -28,6 +28,7 @@
             <string>///Initilize and set Laser variables
 speed = 8;
 damage = 1*dmult;
+sound_play(snd_player_laser);
 </string>
           </argument>
         </arguments>

@@ -38,6 +38,7 @@ if (hp &lt;= 0) { //On Death
     }
     if (lootid &gt;= array_length_1d(loot)) or (lootid &lt;= 0) lootid = 0; //Clamp loot value
     if (lootid != 0) instance_create(x,y,loot[lootid]); //Spawn loot
+    sound_play(snd_enemy_death);
     instance_destroy();
     }
 </string>

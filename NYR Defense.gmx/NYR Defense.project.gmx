@@ -4,12 +4,23 @@
     <Config>Configs\Default</Config>
   </Configs>
   <NewExtensions/>
-  <sounds name="sound"/>
+  <sounds name="sound">
+    <sounds name="Player">
+      <sound>sound\snd_player_death</sound>
+      <sound>sound\snd_player_laser</sound>
+      <sound>sound\snd_player_hit</sound>
+      <sound>sound\player_missile_hit</sound>
+    </sounds>
+    <sounds name="Enemies">
+      <sound>sound\snd_enemy_laser</sound>
+      <sound>sound\snd_enemy_death</sound>
+    </sounds>
+  </sounds>
   <sprites name="sprites">
+    <sprite>sprites\spr_debug</sprite>
     <sprites name="Enemies">
       <sprite>sprites\spr_chunk</sprite>
       <sprite>sprites\spr_blippy</sprite>
-      <sprite>sprites\spr_db_enemy</sprite>
     </sprites>
     <sprites name="Projectiles">
       <sprite>sprites\spr_player_laser</sprite>

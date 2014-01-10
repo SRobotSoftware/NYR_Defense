@@ -29,6 +29,7 @@
 
 speed = 6;
 damage = 1;
+sound_play(snd_enemy_laser);
 </string>
           </argument>
         </arguments>
