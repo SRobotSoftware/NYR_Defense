@@ -29,12 +29,13 @@
 hp = 2;
 valScore = 1;
 
+lootweight = 2;
 loot[0] = 0;
-loot[1] = obj_laserup;
-loot[2] = obj_laserqup;
+loot[1] = obj_healthup;
+loot[2] = obj_healthup;
 loot[3] = obj_missileup;
-loot[4] = obj_healthup;
-loot[5] = obj_healthup;
+loot[4] = obj_laserup;
+loot[5] = obj_laserqup;
 </string>
           </argument>
         </arguments>

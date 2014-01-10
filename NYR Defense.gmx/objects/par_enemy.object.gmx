@@ -25,11 +25,19 @@
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>if (hp &lt;= 0) {
-    score += valScore;
-    randomize();
-    lootid = irandom(array_length_1d(loot));
-    if (lootid != 0) instance_create(x,y,loot[lootid]);
+            <string>///Calculate Health
+if (hp &lt;= 0) { //On Death
+    score += valScore; //Add score value
+    randomize(); //Reset random number generator
+    lootid = irandom(array_length_1d(loot)-1); //Pick an item from the loot table
+    while (lootweight &gt;= 1) { //Reroll based on weight
+        randomize();
+        reroll = irandom(1);
+        if reroll lootid --;
+        lootweight --;
+    }
+    if (lootid &gt;= array_length_1d(loot)) or (lootid &lt;= 0) lootid = 0; //Clamp loot value
+    if (lootid != 0) instance_create(x,y,loot[lootid]); //Spawn loot
     instance_destroy();
     }
 </string>
