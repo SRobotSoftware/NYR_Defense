@@ -71,6 +71,7 @@
       <object>objects\obj_enemy_laser</object>
     </objects>
     <objects name="Powerups">
+      <object>objects\par_powerup</object>
       <object>objects\obj_laserup</object>
       <object>objects\obj_laserqup</object>
       <object>objects\obj_missileup</object>

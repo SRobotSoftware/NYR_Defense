@@ -160,6 +160,7 @@ if (health &lt;= 0) {
 
 if (lives &lt;= 0) {
     instance_deactivate_all(0);
+    wave--;
     room_goto(rm_endscreen);
 }
 </string>
@@ -216,6 +217,7 @@ if (keyboard_check(vk_lshift)) if (alarm[1] = -1) alarm[1] = 20;
           <argument>
             <kind>1</kind>
             <string>///Calculate Collisions
+
 // enemy collision
 hit = instance_place(x,y,par_enemy);
 hit1 = instance_place(x,y,par_enemy_projectile);
@@ -230,14 +232,19 @@ if ((hit != noone) or (hit1 != noone)) {
     audio_play_sound(snd_player_hit,1,0);
     
 }
+
+// powerup collision
+powerhit = instance_place(x,y,par_powerup);
+switch powerhit {
+    
+
+}
+
 // room collision
 if (x &lt;= 16) x = 17 else x = min(x,room_width-17);
 if (y &lt;= 16) y = 17 else y = min(y,room_height-17);
 
-if (lives &lt;= 0) {
-    wave--;
-    room_goto(rm_endscreen);
-}
+
 </string>
           </argument>
         </arguments>
