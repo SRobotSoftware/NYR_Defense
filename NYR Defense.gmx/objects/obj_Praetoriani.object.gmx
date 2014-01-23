@@ -235,10 +235,9 @@ if ((hit != noone) or (hit1 != noone)) {
 
 // powerup collision
 powerhit = instance_place(x,y,par_powerup);
-switch powerhit {
-    
-
-}
+//switch powerhit {
+//  
+//}
 
 // room collision
 if (x &lt;= 16) x = 17 else x = min(x,room_width-17);
