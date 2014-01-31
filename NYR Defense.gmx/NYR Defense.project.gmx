@@ -33,6 +33,7 @@
       <sprite>sprites\spr_player_laser</sprite>
       <sprite>sprites\spr_enemy_laser</sprite>
       <sprite>sprites\spr_player_missile</sprite>
+      <sprite>sprites\spr_explosion</sprite>
     </sprites>
     <sprites name="Powerups">
       <sprite>sprites\spr_laserup</sprite>
@@ -69,6 +70,7 @@
       <object>objects\obj_player_laser</object>
       <object>objects\obj_player_missile</object>
       <object>objects\obj_enemy_laser</object>
+      <object>objects\obj_explosion</object>
     </objects>
     <objects name="Powerups">
       <object>objects\par_powerup</object>

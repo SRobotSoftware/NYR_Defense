@@ -32,6 +32,35 @@ friction = .5;
         </arguments>
       </action>
     </event>
+    <event eventtype="2" enumb="2">
+      <action>
+        <libid>1</libid>
+        <id>603</id>
+        <kind>7</kind>
+        <userelative>0</userelative>
+        <isquestion>0</isquestion>
+        <useapplyto>-1</useapplyto>
+        <exetype>2</exetype>
+        <functionname></functionname>
+        <codestring></codestring>
+        <whoName>self</whoName>
+        <relative>0</relative>
+        <isnot>0</isnot>
+        <arguments>
+          <argument>
+            <kind>1</kind>
+            <string>///On player collision flash red
+
+if isHit {
+image_blend = c_red;
+isHit = 0;
+alarm[2] = 2;
+} else image_blend = -1;
+</string>
+          </argument>
+        </arguments>
+      </action>
+    </event>
     <event eventtype="2" enumb="1">
       <action>
         <libid>1</libid>
@@ -50,7 +79,6 @@ friction = .5;
           <argument>
             <kind>1</kind>
             <string>///Activate Equipment
-
 if (ammo_count &gt;= 1) {
     if (equipment == "missile") {
        var missile;
@@ -124,6 +152,30 @@ switch larm {
         laser5.direction = 80;
         break;
 }
+</string>
+          </argument>
+        </arguments>
+      </action>
+    </event>
+    <event eventtype="3" enumb="2">
+      <action>
+        <libid>1</libid>
+        <id>603</id>
+        <kind>7</kind>
+        <userelative>0</userelative>
+        <isquestion>0</isquestion>
+        <useapplyto>-1</useapplyto>
+        <exetype>2</exetype>
+        <functionname></functionname>
+        <codestring></codestring>
+        <whoName>self</whoName>
+        <relative>0</relative>
+        <isnot>0</isnot>
+        <arguments>
+          <argument>
+            <kind>1</kind>
+            <string>///Clamp health
+if (health &gt;= 4) health = 3;
 </string>
           </argument>
         </arguments>
@@ -230,14 +282,26 @@ if ((hit != noone) or (hit1 != noone)) {
     instance_deactivate_object(hit1)
     }
     audio_play_sound(snd_player_hit,1,0);
+    isHit = 1;
+    alarm[2] = 1;
     
 }
 
 // powerup collision
 powerhit = instance_place(x,y,par_powerup);
-//switch powerhit {
-//  
-//}
+switch powerhit {
+  case obj_laserup:
+  break;
+  case obj_laserqup:
+  break;
+  case obj_missileup:
+  break;
+  case obj_shieldup:
+  break;
+  case obj_healthup:
+  health += 1;
+  break;
+}
 
 // room collision
 if (x &lt;= 16) x = 17 else x = min(x,room_width-17);
