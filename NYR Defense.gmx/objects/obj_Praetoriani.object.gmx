@@ -4,7 +4,7 @@
   <solid>0</solid>
   <visible>-1</visible>
   <depth>0</depth>
-  <persistent>0</persistent>
+  <persistent>-1</persistent>
   <parentName>&lt;undefined&gt;</parentName>
   <maskName>&lt;undefined&gt;</maskName>
   <events>
@@ -152,6 +152,7 @@ switch larm {
         laser5.direction = 80;
         break;
 }
+audio_play_sound(snd_player_laser,1,0);
 </string>
           </argument>
         </arguments>
@@ -202,11 +203,12 @@ if (health &gt;= 4) health = 3;
 
 if (health &lt;= 0) {
     instance_deactivate_object(par_projectile);
-    score = ceil(score/2);
     x = 160;
     y = 576;
     lives -= 1;
     health = 3;
+    larm = 0;
+    dmult = 1;
     audio_play_sound(snd_player_death,1,0);
 }
 
@@ -289,18 +291,25 @@ if ((hit != noone) or (hit1 != noone)) {
 
 // powerup collision
 powerhit = instance_place(x,y,par_powerup);
-switch powerhit {
-  case obj_laserup:
+if powerhit != noone {
+powerpickup = object_get_name(powerhit.object_index); //get name of powerup
+switch powerpickup {
+  case "obj_laserup":
+  if dmult &lt;= 2 dmult = dmult * 2;
   break;
-  case obj_laserqup:
+  case "obj_laserqup":
+  if larm &lt;= 2 larm += 1;
   break;
-  case obj_missileup:
+  case "obj_missileup":
+  ammo_count += 1;
   break;
-  case obj_shieldup:
+  case "obj_shieldup":
   break;
-  case obj_healthup:
+  case "obj_healthup":
   health += 1;
   break;
+}
+powerhit.exist = 0;
 }
 
 // room collision
@@ -308,6 +317,30 @@ if (x &lt;= 16) x = 17 else x = min(x,room_width-17);
 if (y &lt;= 16) y = 17 else y = min(y,room_height-17);
 
 
+</string>
+          </argument>
+        </arguments>
+      </action>
+    </event>
+    <event eventtype="9" enumb="39">
+      <action>
+        <libid>1</libid>
+        <id>603</id>
+        <kind>7</kind>
+        <userelative>0</userelative>
+        <isquestion>0</isquestion>
+        <useapplyto>-1</useapplyto>
+        <exetype>2</exetype>
+        <functionname></functionname>
+        <codestring></codestring>
+        <whoName>self</whoName>
+        <relative>0</relative>
+        <isnot>0</isnot>
+        <arguments>
+          <argument>
+            <kind>1</kind>
+            <string>larm = 3;
+dmult = 4;
 </string>
           </argument>
         </arguments>

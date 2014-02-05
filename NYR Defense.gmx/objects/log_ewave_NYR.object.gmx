@@ -90,17 +90,20 @@ while (iy &lt;= 96) {
 
 
 // Calculate remaining enemies, advance wave if none are left.
-
-if (!instance_number(par_enemy)) {
-    wave +=1;
-    test = array_height_2d(grid);
-    var z
-    var espawn
-    for (z = 0; z &lt; test; z += 1) {
-        if (irandom(8) &gt;= wave - 1) espawn = obj_Chunk; else espawn = obj_Blippy;
-        instance_create(grid[z,0],grid[z,1],espawn);
+if (wave &lt;= 9) {
+    if (!instance_number(par_enemy)) {
+        wave +=1;
+        test = array_height_2d(grid);
+        var z
+        var espawn
+        for (z = 0; z &lt; test; z += 1) {
+            if (irandom(8) &gt;= wave - 1) espawn = obj_Chunk; else espawn = obj_Blippy;
+            instance_create(grid[z,0],grid[z,1],espawn);
+        }
     }
-  }
+} else {
+    room_goto(rm_NYR_boss);
+}
 </string>
           </argument>
         </arguments>
