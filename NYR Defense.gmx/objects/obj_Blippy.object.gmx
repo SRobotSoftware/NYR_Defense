@@ -60,8 +60,17 @@ loot[5] = obj_laserqup;
             <kind>1</kind>
             <string>/// Fire Laser
 
+var aim = 270;
+var i = 0;
+var target = playerx;
+
+while (i &lt;= 2) {
+    if target &lt;= x &amp;&amp; target &lt;= x - 16 {aim -= 10; target -= 10;}
+    if target &gt;= x &amp;&amp; target &gt;= x + 16 {aim += 10; target -= 10;}
+    i++;
+}
 laser0 = instance_create(x,y+8,obj_enemy_laser);
-laser0.direction = 270;
+laser0.direction = aim;
 </string>
           </argument>
         </arguments>

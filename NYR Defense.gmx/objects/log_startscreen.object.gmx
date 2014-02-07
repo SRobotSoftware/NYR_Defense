@@ -25,7 +25,8 @@
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>globalvar highscore;
+            <string>/// On Game start, process highscores
+globalvar highscore;
 
 if file_exists("NYR_Defense_Save.ini") {
 ini_open("NYR_Defense_Save.ini");
@@ -56,14 +57,46 @@ highscore = 0;
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>draw_set_font(fnt_default);
+            <string>/// Draw main menu
+
+draw_set_font(fnt_default);
 draw_set_halign(fa_center);
 draw_set_color(c_white);
 draw_text(160,128,"NYR Defense");
 draw_text(160,192,"Highscore: "+string(highscore));
 draw_text(160,256,"Movement = WASD#Fire = Space#Use Equipment = L-Shift");
-draw_text(160,480,"Press Space#to begin");
+draw_text(160,448,"Press Space#to begin");
+draw_sprite(spr_laserup,-1,64,544);
+draw_text(64,576,"x2#Damage");
+draw_sprite(spr_laserqup,-1,128,544);
+draw_text(128,576,"Laser#Upgrade");
+draw_sprite(spr_missileup,-1,192,544);
+draw_text(192,576,"+1#Missile");
+draw_sprite(spr_healthup,-1,256,544);
+draw_text(256,576,"+1#Health");
 </string>
+          </argument>
+        </arguments>
+      </action>
+    </event>
+    <event eventtype="9" enumb="39">
+      <action>
+        <libid>1</libid>
+        <id>224</id>
+        <kind>0</kind>
+        <userelative>0</userelative>
+        <isquestion>0</isquestion>
+        <useapplyto>0</useapplyto>
+        <exetype>1</exetype>
+        <functionname>action_another_room</functionname>
+        <codestring></codestring>
+        <whoName>self</whoName>
+        <relative>0</relative>
+        <isnot>0</isnot>
+        <arguments>
+          <argument>
+            <kind>11</kind>
+            <room>rm_DebugRoom</room>
           </argument>
         </arguments>
       </action>

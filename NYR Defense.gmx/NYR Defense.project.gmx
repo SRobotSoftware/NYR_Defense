@@ -28,6 +28,7 @@
     <sprites name="Enemies">
       <sprite>sprites\spr_chunk</sprite>
       <sprite>sprites\spr_blippy</sprite>
+      <sprite>sprites\spr_Blippythequick</sprite>
     </sprites>
     <sprites name="Projectiles">
       <sprite>sprites\spr_player_laser</sprite>
@@ -39,12 +40,10 @@
       <sprite>sprites\spr_laserup</sprite>
       <sprite>sprites\spr_laserqup</sprite>
       <sprite>sprites\spr_missileup</sprite>
-      <sprite>sprites\spr_shieldup</sprite>
       <sprite>sprites\spr_healthup</sprite>
     </sprites>
     <sprites name="Player">
       <sprite>sprites\spr_praetoriani</sprite>
-      <sprite>sprites\spr_shield</sprite>
       <sprite>sprites\spr_health_bg</sprite>
       <sprite>sprites\spr_health</sprite>
     </sprites>
@@ -77,12 +76,10 @@
       <object>objects\obj_laserup</object>
       <object>objects\obj_laserqup</object>
       <object>objects\obj_missileup</object>
-      <object>objects\obj_shieldup</object>
       <object>objects\obj_healthup</object>
     </objects>
     <objects name="Player">
       <object>objects\obj_Praetoriani</object>
-      <object>objects\obj_shield</object>
     </objects>
     <objects name="Logic">
       <object>objects\log_startscreen</object>
@@ -101,6 +98,7 @@
     <room>rooms\rm_Moon_boss</room>
     <room>rooms\rm_endscreen</room>
     <room>rooms\rm_highscore</room>
+    <room>rooms\rm_DebugRoom</room>
   </rooms>
   <help>
     <rtf>help.rtf</rtf>

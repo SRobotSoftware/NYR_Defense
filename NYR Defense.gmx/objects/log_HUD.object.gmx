@@ -28,14 +28,12 @@
             <string>/// Initialize game variables
 
 globalvar ammo_count;
-globalvar equipment;
 globalvar wave;
 globalvar level;
 globalvar larm;
 globalvar dmult;
 
 ammo_count = 3;
-equipment = "missile";
 wave = 0;
 level = 0;
 larm = 0;
@@ -67,7 +65,7 @@ lives = 3;
             <kind>1</kind>
             <string>///Go to start
 room_goto(rm_startscreen);
-instance_destroy();
+instance_deactivate_all(0);
 </string>
           </argument>
         </arguments>

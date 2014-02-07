@@ -27,6 +27,10 @@
             <kind>1</kind>
             <string>///Set Friction
 friction = .5;
+
+globalvar playerx,playery;
+playerx = x;
+playery = y;
 </string>
           </argument>
         </arguments>
@@ -78,19 +82,12 @@ alarm[2] = 2;
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>///Activate Equipment
+            <string>///Fire Missile
 if (ammo_count &gt;= 1) {
-    if (equipment == "missile") {
-       var missile;
-       missile = instance_create(x,y-4,obj_player_missile);
-       missile.direction = 90;
-       ammo_count -= 1;
-    }
-
-    if (equipment == "shield") &amp;&amp; !instance_exists(obj_shield) {
-       instance_create(x,y,obj_shield);
-       ammo_count -= 1;
-    }
+    var missile;
+    missile = instance_create(x,y-4,obj_player_missile);
+    missile.direction = 90;
+    ammo_count -= 1;
 }
 </string>
           </argument>
@@ -316,7 +313,8 @@ powerhit.exist = 0;
 if (x &lt;= 16) x = 17 else x = min(x,room_width-17);
 if (y &lt;= 16) y = 17 else y = min(y,room_height-17);
 
-
+playerx = x;
+playery = y;
 </string>
           </argument>
         </arguments>
