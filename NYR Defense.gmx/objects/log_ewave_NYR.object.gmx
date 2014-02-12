@@ -25,7 +25,7 @@
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>// Set up a grid of start points on the playing field
+            <string>/// Set up a grid of start points on the playing field
 i = 0;
 ix = 32;
 iy = 32;
@@ -61,7 +61,8 @@ while (iy &lt;= 96) {
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>if wave &gt;= 10 {
+            <string>/// Goto Boss Room on wave 10
+if wave &gt;= 10 {
     room_goto(rm_NYR_boss);
 }
 </string>
@@ -86,7 +87,7 @@ while (iy &lt;= 96) {
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>// Assign enemies in current wave start positions and spawn positions
+            <string>/// Assign enemies in current wave start positions and spawn positions
 
 
 // Calculate remaining enemies, advance wave if none are left.

@@ -63,8 +63,11 @@ if (hp &lt;= 0) { //On Death
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>score -= valScore;
+            <string>/// Destroy if not spawning
+if (spawnshield = 0) {
+score -= valScore;
 instance_destroy();
+}
 </string>
           </argument>
         </arguments>

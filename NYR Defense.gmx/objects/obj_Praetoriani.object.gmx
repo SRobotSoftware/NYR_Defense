@@ -206,6 +206,7 @@ if (health &lt;= 0) {
     health = 3;
     larm = 0;
     dmult = 1;
+    score = floor(score/2);
     audio_play_sound(snd_player_death,1,0);
 }
 
@@ -337,8 +338,11 @@ playery = y;
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>larm = 3;
+            <string>/// Cheatcode
+larm = 3;
 dmult = 4;
+show_message("Cheater!");
+score = -343;
 </string>
           </argument>
         </arguments>

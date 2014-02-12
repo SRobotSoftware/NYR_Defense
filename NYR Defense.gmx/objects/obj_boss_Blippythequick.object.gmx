@@ -25,21 +25,27 @@
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>///Initialize and set Enemy Variables
+            <string>/// Initialize and set Enemy Variables
 startpos[0] = 0;
 startpos[1] = 0;
 spawnpos[0] = 0;
 spawnpos[1] = 0;
 hp = 10;
 valScore = 100;
+image_xscale = 2;
+image_yscale = 2;
+position = 0;
+spawnshield = 1;
+alarm[0] = 10;
 
-//Loot table
+// Loot table
 lootweight = 0;
 loot[0] = obj_healthup;
 
-//Boss stuff
-image_xscale = 2;
-image_yscale = 2;
+// Pathing
+move_towards_point(160,64,4);
+postrx = 160;
+postry = 64;
 </string>
           </argument>
         </arguments>
@@ -63,6 +69,84 @@ image_yscale = 2;
           <argument>
             <kind>1</kind>
             <string>room_goto(rm_endscreen);
+</string>
+          </argument>
+        </arguments>
+      </action>
+    </event>
+    <event eventtype="2" enumb="0">
+      <action>
+        <libid>1</libid>
+        <id>603</id>
+        <kind>7</kind>
+        <userelative>0</userelative>
+        <isquestion>0</isquestion>
+        <useapplyto>-1</useapplyto>
+        <exetype>2</exetype>
+        <functionname></functionname>
+        <codestring></codestring>
+        <whoName>self</whoName>
+        <relative>0</relative>
+        <isnot>0</isnot>
+        <arguments>
+          <argument>
+            <kind>1</kind>
+            <string>/// Spawn Shield
+spawnshield = 0;
+</string>
+          </argument>
+        </arguments>
+      </action>
+    </event>
+    <event eventtype="3" enumb="0">
+      <action>
+        <libid>1</libid>
+        <id>603</id>
+        <kind>7</kind>
+        <userelative>0</userelative>
+        <isquestion>0</isquestion>
+        <useapplyto>-1</useapplyto>
+        <exetype>2</exetype>
+        <functionname></functionname>
+        <codestring></codestring>
+        <whoName>self</whoName>
+        <relative>0</relative>
+        <isnot>0</isnot>
+        <arguments>
+          <argument>
+            <kind>1</kind>
+            <string>/// Move and Fire
+// Check Pathing position
+
+if (x == postrx &amp;&amp; y == postry) {
+    // Fire boss laser
+    instance_create(x,y,obj_enemy_boss_laser);
+    position += 1;
+    switch position {
+        case 1:
+        postrx = 64;
+        postry = 64;
+        spd = 8;
+        break;
+        case 2:
+        postrx = 64;
+        postry = 544;
+        spd = 8;
+        break;
+        case 3:
+        postrx = 224;
+        postry = 544;
+        spd = 8;
+        break;
+        case 4:
+        postrx = 224;
+        postry = 64;
+        spd = 8;
+        position = 0;
+        break;
+        }
+    move_towards_point(postrx,postry,spd);
+}
 </string>
           </argument>
         </arguments>
