@@ -29,7 +29,7 @@
 
 damage = 2;
 leftRoom = 0;
-audio_play_sound(snd_enemy_laser,1,0);
+sound_fx(snd_enemy_laser);
 move_towards_point(playerx,playery,6);
 </string>
           </argument>
@@ -48,5 +48,8 @@ move_towards_point(playerx,playery,6);
   <PhysicsObjectFriction>0.200000002980232</PhysicsObjectFriction>
   <PhysicsObjectAwake>-1</PhysicsObjectAwake>
   <PhysicsObjectKinematic>0</PhysicsObjectKinematic>
-  <PhysicsShapePoints/>
+  <PhysicsShapePoints>
+    <point>3,2</point>
+    <point>3,3</point>
+  </PhysicsShapePoints>
 </object>

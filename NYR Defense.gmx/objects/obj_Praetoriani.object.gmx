@@ -28,7 +28,6 @@
             <string>///Set Friction
 friction = .5;
 
-globalvar playerx,playery;
 playerx = x;
 playery = y;
 </string>
@@ -149,7 +148,7 @@ switch larm {
         laser5.direction = 80;
         break;
 }
-audio_play_sound(snd_player_laser,1,0);
+sound_fx(snd_player_laser);
 </string>
           </argument>
         </arguments>
@@ -207,7 +206,7 @@ if (health &lt;= 0) {
     larm = 0;
     dmult = 1;
     score = floor(score/2);
-    audio_play_sound(snd_player_death,1,0);
+    sound_fx(snd_player_death);
 }
 
 if (lives &lt;= 0) {
@@ -281,7 +280,7 @@ if ((hit != noone) or (hit1 != noone)) {
     } else if (hit1) {
     instance_deactivate_object(hit1)
     }
-    audio_play_sound(snd_player_hit,1,0);
+    sound_fx(snd_player_hit);
     isHit = 1;
     alarm[2] = 1;
     
@@ -316,33 +315,6 @@ if (y &lt;= 16) y = 17 else y = min(y,room_height-17);
 
 playerx = x;
 playery = y;
-</string>
-          </argument>
-        </arguments>
-      </action>
-    </event>
-    <event eventtype="9" enumb="39">
-      <action>
-        <libid>1</libid>
-        <id>603</id>
-        <kind>7</kind>
-        <userelative>0</userelative>
-        <isquestion>0</isquestion>
-        <useapplyto>-1</useapplyto>
-        <exetype>2</exetype>
-        <functionname></functionname>
-        <codestring></codestring>
-        <whoName>self</whoName>
-        <relative>0</relative>
-        <isnot>0</isnot>
-        <arguments>
-          <argument>
-            <kind>1</kind>
-            <string>/// Cheatcode
-larm = 3;
-dmult = 4;
-show_message("Cheater!");
-score = -343;
 </string>
           </argument>
         </arguments>

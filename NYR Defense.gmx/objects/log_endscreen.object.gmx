@@ -85,7 +85,7 @@ draw_text(160,480,"Press Space#to try again.");
         <arguments>
           <argument>
             <kind>11</kind>
-            <room>rm_startscreen</room>
+            <room>rm_init</room>
           </argument>
         </arguments>
       </action>

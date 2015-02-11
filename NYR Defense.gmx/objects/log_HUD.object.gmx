@@ -8,70 +8,7 @@
   <parentName>&lt;undefined&gt;</parentName>
   <maskName>&lt;undefined&gt;</maskName>
   <events>
-    <event eventtype="0" enumb="0">
-      <action>
-        <libid>1</libid>
-        <id>603</id>
-        <kind>7</kind>
-        <userelative>0</userelative>
-        <isquestion>0</isquestion>
-        <useapplyto>-1</useapplyto>
-        <exetype>2</exetype>
-        <functionname></functionname>
-        <codestring></codestring>
-        <whoName>self</whoName>
-        <relative>0</relative>
-        <isnot>0</isnot>
-        <arguments>
-          <argument>
-            <kind>1</kind>
-            <string>/// Initialize game variables
-
-globalvar ammo_count;
-globalvar wave;
-globalvar level;
-globalvar larm;
-globalvar dmult;
-
-ammo_count = 3;
-wave = 0;
-level = 0;
-larm = 0;
-dmult = 1;
-score = 0;
-health = 3;
-lives = 3;
-</string>
-          </argument>
-        </arguments>
-      </action>
-    </event>
-    <event eventtype="5" enumb="27">
-      <action>
-        <libid>1</libid>
-        <id>603</id>
-        <kind>7</kind>
-        <userelative>0</userelative>
-        <isquestion>0</isquestion>
-        <useapplyto>-1</useapplyto>
-        <exetype>2</exetype>
-        <functionname></functionname>
-        <codestring></codestring>
-        <whoName>self</whoName>
-        <relative>0</relative>
-        <isnot>0</isnot>
-        <arguments>
-          <argument>
-            <kind>1</kind>
-            <string>///Go to start
-room_goto(rm_startscreen);
-instance_deactivate_all(0);
-</string>
-          </argument>
-        </arguments>
-      </action>
-    </event>
-    <event eventtype="8" enumb="0">
+    <event eventtype="8" enumb="64">
       <action>
         <libid>1</libid>
         <id>603</id>
@@ -116,20 +53,166 @@ if (health &gt;=3) {
         </arguments>
       </action>
     </event>
-    <event eventtype="9" enumb="82">
+    <event eventtype="8" enumb="0">
       <action>
         <libid>1</libid>
-        <id>223</id>
+        <id>603</id>
+        <kind>7</kind>
+        <userelative>0</userelative>
+        <isquestion>0</isquestion>
+        <useapplyto>-1</useapplyto>
+        <exetype>2</exetype>
+        <functionname></functionname>
+        <codestring></codestring>
+        <whoName>self</whoName>
+        <relative>0</relative>
+        <isnot>0</isnot>
+        <arguments>
+          <argument>
+            <kind>1</kind>
+            <string>/// Draw main menu
+if (room_get_name(room)=="rm_startscreen"){
+draw_set_font(fnt_default);
+draw_set_halign(fa_center);
+draw_set_color(c_white);
+draw_text(160,128,"NYR Defense");
+draw_text(160,192,"Highscore: "+string(highscore));
+draw_text(160,256,"Movement = WASD#Fire = Space#Use Equipment = L-Shift#Toggle sound with Q");
+draw_text(160,384,"Press Space#to begin");
+draw_sprite(spr_laserup,-1,64,480);
+draw_text(64,512,"x2#Damage");
+draw_sprite(spr_laserqup,-1,128,480);
+draw_text(128,512,"Laser#Upgrd");
+draw_sprite(spr_missileup,-1,192,480);
+draw_text(192,512,"+1#Missile");
+draw_sprite(spr_healthup,-1,256,480);
+draw_text(256,512,"+1#Health");
+} else {}
+</string>
+          </argument>
+        </arguments>
+      </action>
+    </event>
+    <event eventtype="9" enumb="81">
+      <action>
+        <libid>1</libid>
+        <id>603</id>
+        <kind>7</kind>
+        <userelative>0</userelative>
+        <isquestion>0</isquestion>
+        <useapplyto>-1</useapplyto>
+        <exetype>2</exetype>
+        <functionname></functionname>
+        <codestring></codestring>
+        <whoName>self</whoName>
+        <relative>0</relative>
+        <isnot>0</isnot>
+        <arguments>
+          <argument>
+            <kind>1</kind>
+            <string>///Toggle Mute
+
+if (mute_sound)
+{
+mute_sound = 0;
+}
+else
+{
+mute_sound = 1;
+}
+</string>
+          </argument>
+        </arguments>
+      </action>
+    </event>
+    <event eventtype="9" enumb="39">
+      <action>
+        <libid>1</libid>
+        <id>224</id>
         <kind>0</kind>
         <userelative>0</userelative>
         <isquestion>0</isquestion>
         <useapplyto>0</useapplyto>
         <exetype>1</exetype>
-        <functionname>action_current_room</functionname>
+        <functionname>action_another_room</functionname>
         <codestring></codestring>
         <whoName>self</whoName>
         <relative>0</relative>
         <isnot>0</isnot>
+        <arguments>
+          <argument>
+            <kind>11</kind>
+            <room>rm_DebugRoom</room>
+          </argument>
+        </arguments>
+      </action>
+    </event>
+    <event eventtype="9" enumb="32">
+      <action>
+        <libid>1</libid>
+        <id>603</id>
+        <kind>7</kind>
+        <userelative>0</userelative>
+        <isquestion>0</isquestion>
+        <useapplyto>-1</useapplyto>
+        <exetype>2</exetype>
+        <functionname></functionname>
+        <codestring></codestring>
+        <whoName>self</whoName>
+        <relative>0</relative>
+        <isnot>0</isnot>
+        <arguments>
+          <argument>
+            <kind>1</kind>
+            <string>///Reset variables and go to NYR
+if (room_get_name(room)=="rm_startscreen") {
+
+//Set Variables to Starting Values
+
+ammo_count = 3;
+wave = 0;
+level = 0;
+larm = 0;
+dmult = 1;
+score = 0;
+health = 3;
+lives = 3;
+
+room_goto(rm_NYR);
+
+}
+</string>
+          </argument>
+        </arguments>
+      </action>
+    </event>
+    <event eventtype="9" enumb="27">
+      <action>
+        <libid>1</libid>
+        <id>603</id>
+        <kind>7</kind>
+        <userelative>0</userelative>
+        <isquestion>0</isquestion>
+        <useapplyto>-1</useapplyto>
+        <exetype>2</exetype>
+        <functionname></functionname>
+        <codestring></codestring>
+        <whoName>self</whoName>
+        <relative>0</relative>
+        <isnot>0</isnot>
+        <arguments>
+          <argument>
+            <kind>1</kind>
+            <string>///Go to start if not already there
+if (room_get_name(room)!="rm_startscreen"){
+room_goto(rm_startscreen);
+instance_deactivate_all(1);
+} else {
+game_end();
+}
+</string>
+          </argument>
+        </arguments>
       </action>
     </event>
   </events>

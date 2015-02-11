@@ -10,12 +10,8 @@
   <persistent>0</persistent>
   <colour>0</colour>
   <showcolour>-1</showcolour>
-  <code>ammo_count = 0;
-wave = 0;
-level = 0;
-larm = 0;
-dmult = 0;
-highscore = 0;</code>
+  <code>initialize_game();
+room_goto_next();</code>
   <enableViews>0</enableViews>
   <clearViewBackground>-1</clearViewBackground>
   <clearDisplayBuffer>-1</clearDisplayBuffer>
@@ -55,7 +51,9 @@ highscore = 0;</code>
     <view visible="0" objName="&lt;undefined&gt;" xview="0" yview="0" wview="640" hview="480" xport="0" yport="0" wport="640" hport="480" hborder="32" vborder="32" hspeed="-1" vspeed="-1"/>
     <view visible="0" objName="&lt;undefined&gt;" xview="0" yview="0" wview="640" hview="480" xport="0" yport="0" wport="640" hport="480" hborder="32" vborder="32" hspeed="-1" vspeed="-1"/>
   </views>
-  <instances/>
+  <instances>
+    <instance objName="log_HUD" x="128" y="448" name="inst_950E25C7" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
+  </instances>
   <tiles/>
   <PhysicsWorld>0</PhysicsWorld>
   <PhysicsWorldTop>0</PhysicsWorldTop>

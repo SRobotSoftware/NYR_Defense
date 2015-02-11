@@ -53,7 +53,7 @@ leftRoom = 0;
           <argument>
             <kind>1</kind>
             <string>///Play sound and create explosion
-if !leftRoom audio_play_sound(snd_player_missile_hit,1,0);
+sound_fx(snd_player_missile_hit);
 instance_create(x,y,obj_explosion);
 </string>
           </argument>
